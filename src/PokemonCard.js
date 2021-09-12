@@ -9,10 +9,10 @@ function PokemonCard({ front, back, name, stats }) {
   //   setIsFacingUp(isUp => !isUp);
   // };
 
-  const [isFacingUp, setFlip] = useFlip(true) 
+  const [isFacingUp, toggleFlip] = useFlip(true) 
 
   return (
-    <div onClick={setFlip} className="PokemonCard Card">
+    <div onClick={toggleFlip} className="PokemonCard Card">
       {isFacingUp ? (
         <div className="PokemonCard-front">
           <img src={front} alt={`{name} front`} />

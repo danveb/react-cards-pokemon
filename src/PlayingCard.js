@@ -10,13 +10,13 @@ function PlayingCard({ front, back = backOfCard }) {
   //   setIsFacingUp(isUp => !isUp);
   // };
 
-  const [isFacingUp, setFlip] = useFlip(true) 
+  const [isFacingUp, toggleFlip] = useFlip(true) 
 
   return (
     <img
       src={isFacingUp ? front : back}
       alt="playing card"
-      onClick={setFlip}
+      onClick={toggleFlip}
       className="PlayingCard Card"
     />
   );

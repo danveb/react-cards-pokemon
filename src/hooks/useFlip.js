@@ -2,12 +2,14 @@ import React, { useState } from 'react'
 
 const useFlip = () => {
     // state
-    const [flip, setFlip] = useState(true) 
-    const flipCard = () => {
+    const [isFacingUp, setFlip] = useState(true) 
+    const toggleFlip = () => {
         setFlip(useFlip => !useFlip) 
     }
     // return piece of state
-    return [flip, flipCard] 
+    // - isFacingUp: current state of card 
+    // - toggleFlip: function to toggle the flip
+    return [isFacingUp, toggleFlip] 
 }
 
 export default useFlip 
