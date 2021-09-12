@@ -1,12 +1,13 @@
 import { useState } from 'react' 
+
 import axios from 'axios' 
 
-const useAxios = (url, options = {}) => {
+const useAxios = (url) => {
     const [response, setResponse] = useState([]) 
 
-    const getData = async () => {
+    const getData = async (options='') => {
         try {
-            const res = await axios.get(url) 
+            const res = await axios.get(`${url}${options}`) 
             const data = await res.data
             setResponse([...response, data]) 
         } catch(err) {
